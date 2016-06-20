@@ -13,6 +13,7 @@ gem 'redis', '~> 3.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'annotate'
+gem 'twitter-bootstrap-rails'
 
 group :development, :test do
   gem 'rails-controller-testing', git: 'https://github.com/rails/rails-controller-testing'
