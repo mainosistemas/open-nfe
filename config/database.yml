@@ -1,0 +1,12 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 25
+
+development:
+  <<: *default
+  database: open_nfe_development
+
+test:
+  <<: *default
+  database: open_nfe_test
