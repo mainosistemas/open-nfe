@@ -13,6 +13,8 @@ gem 'redis', '~> 3.0'
 gem 'bcrypt', '~> 3.1.7'
 
 group :development, :test do
+  gem 'rails-controller-testing', git: 'https://github.com/rails/rails-controller-testing'
+  gem 'rspec-rails', '3.5.0.beta1'
   gem 'pry-rails'
   gem 'byebug', platform: :mri
 end
