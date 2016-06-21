@@ -15,4 +15,5 @@ ActiveSupport::Inflector.inflections do |inflect|
   # inflect.acronym 'RESTful'
   inflect.irregular 'emissor', 'emissores'
   inflect.irregular 'tipo_de_pessoa', 'tipos_de_pessoas'
+  inflect.irregular 'pais', 'paises'
 end

@@ -30,4 +30,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   validates :cnpj, uniqueness: true, presence: true
   has_one :emissor
+  has_many :clientes
 end
