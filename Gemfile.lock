@@ -1,5 +1,5 @@
 GIT
-  remote: git@github.com:plataformatec/devise.git
+  remote: https://github.com/plataformatec/devise.git
   revision: ac702843ddaa5652fde7a0050ff2378e7368149e
   specs:
     devise (4.1.0)
