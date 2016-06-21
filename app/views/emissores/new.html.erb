@@ -1,0 +1,14 @@
+<div class="col-md-4">
+  <%= simple_form_for @emissor, method: :post do |f| %>
+    <%= f.input :nome_fantasia %>
+    <%= f.input :razao_social %>
+    <%= f.input :inscricao_estadual %>
+    <%= f.input :inscricao_municipal %>
+    <%= f.input :cep %>
+    <%= f.input :logradouro %>
+    <%= f.input :numero_do_endereco %>
+    <%= f.input :complemento %>
+    <%= f.input :bairro %>
+    <%= f.button :submit, 'Salvar' %>
+  <% end %>
+</div>
