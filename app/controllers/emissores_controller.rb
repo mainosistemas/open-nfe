@@ -15,6 +15,20 @@ class EmissoresController < ApplicationController
     end
   end
 
+  def edit
+    @emissor = current_user.emissor
+  end
+
+  def update
+    @emissor = current_user.emissor
+    if @emissor.update(emissor_params)
+      flash[:notice] = 'Emissor atualizado com sucesso'
+      redirect_to action: :edit, id: @emissor.id
+    else
+      render :edit
+    end
+  end
+
   private
 
     def emissor_params

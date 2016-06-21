@@ -1,7 +1,11 @@
 FactoryGirl.define do
   factory :user do
-    email Faker::Internet.email
+    sequence :email do |n|
+      "foo#{n}@example.com"
+    end
     password Faker::Internet.password
-    cnpj Faker::CNPJ.numeric
+    sequence :cnpj do |n|
+      "#{n}"
+    end
   end
 end

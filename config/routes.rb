@@ -3,6 +3,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  resources :emissores, only: [:index, :new, :create]
+  resources :emissores, except: [:show, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
