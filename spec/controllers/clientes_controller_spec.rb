@@ -69,9 +69,9 @@ RSpec.describe ClientesController, type: :controller do
       let!(:another_cliente) { create(:cliente, user: another_user) }
 
       it 'raise RecordNotFound' do
-        expect {
+        expect do
           get :edit, params: { id: another_cliente.id }
-        }.to raise_exception(ActiveRecord::RecordNotFound)
+        end.to raise_exception(ActiveRecord::RecordNotFound)
       end
     end
   end
@@ -81,13 +81,15 @@ RSpec.describe ClientesController, type: :controller do
       let(:cliente) { create(:cliente, user: user) }
 
       it 'updates cliente' do
-        expect {
-          put :update, params: { id: cliente.id, cliente: { razao_social: 'fooo inc'} }
-        }.to change { cliente.reload.razao_social }.from('foo').to('fooo inc')
+        expect do
+          put :update, params: { id: cliente.id,
+            cliente: { razao_social: 'fooo inc' } }
+        end.to change { cliente.reload.razao_social }.from('foo').to('fooo inc')
       end
 
       it 'redirect to edit path' do
-        put :update, params: { id: cliente.id, cliente: { razao_social: 'fooo inc'} }
+        put :update, params: { id: cliente.id,
+          cliente: { razao_social: 'fooo inc' } }
         expect(response).to redirect_to(edit_cliente_path(cliente))
       end
     end
@@ -96,9 +98,10 @@ RSpec.describe ClientesController, type: :controller do
       let(:cliente) { create(:cliente, user: user) }
 
       it 'not updates cliente' do
-        expect {
-          put :update, params: { id: cliente.id, cliente: { razao_social: nil } }
-        }.to_not change { cliente.reload.razao_social }.from('foo')
+        expect do
+          put :update, params: { id: cliente.id,
+            cliente: { razao_social: nil } }
+        end.to_not change { cliente.reload.razao_social }.from('foo')
       end
 
       it 'renders edit template' do

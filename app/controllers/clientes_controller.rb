@@ -1,6 +1,6 @@
 class ClientesController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_cliente, only: [:edit, :update] 
+  before_action :find_cliente, only: [:edit, :update]
 
   def new
     @cliente = current_user.clientes.new
@@ -29,7 +29,6 @@ class ClientesController < ApplicationController
   end
 
   private
-
     def find_cliente
       @cliente = current_user.clientes.find(params[:id])
     end
