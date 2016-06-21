@@ -8,12 +8,12 @@ RSpec.describe ClientesController, type: :controller do
   end
 
   describe 'GET new' do
-    it 'assings @cliente' do
+    it 'assigns @cliente' do
       get :new
       expect(assigns(:cliente)).to be_a(Cliente)
     end
 
-    it 'renderes the new template' do
+    it 'renders the new template' do
       get :new
       expect(response).to render_template(:new)
     end
@@ -45,6 +45,65 @@ RSpec.describe ClientesController, type: :controller do
       it 'renders the new template' do
         post :create, params: { cliente: cliente_params }
         expect(response).to render_template(:new)
+      end
+    end
+  end
+
+  describe 'GET edit' do
+    context 'when cliente belongs to user' do
+      let!(:cliente) { create(:cliente, user: user) }
+
+      it 'assigns @cliente from user' do
+        get :edit, params: { id: cliente.id }
+        expect(assigns(:cliente)).to eq(cliente)
+      end
+
+      it 'renders the edit template' do
+        get :edit, params: { id: cliente.id }
+        expect(response).to render_template(:edit)
+      end
+    end
+
+    context 'when cliente not belongs to user' do
+      let!(:another_user) { create(:user) }
+      let!(:another_cliente) { create(:cliente, user: another_user) }
+
+      it 'raise RecordNotFound' do
+        expect {
+          get :edit, params: { id: another_cliente.id }
+        }.to raise_exception(ActiveRecord::RecordNotFound)
+      end
+    end
+  end
+
+  describe 'PUT update' do
+    context 'when cliente is valid' do
+      let(:cliente) { create(:cliente, user: user) }
+
+      it 'updates cliente' do
+        expect {
+          put :update, params: { id: cliente.id, cliente: { razao_social: 'fooo inc'} }
+        }.to change { cliente.reload.razao_social }.from('foo').to('fooo inc')
+      end
+
+      it 'redirect to edit path' do
+        put :update, params: { id: cliente.id, cliente: { razao_social: 'fooo inc'} }
+        expect(response).to redirect_to(edit_cliente_path(cliente))
+      end
+    end
+
+    context 'when cliente is invalid' do
+      let(:cliente) { create(:cliente, user: user) }
+
+      it 'not updates cliente' do
+        expect {
+          put :update, params: { id: cliente.id, cliente: { razao_social: nil } }
+        }.to_not change { cliente.reload.razao_social }.from('foo')
+      end
+
+      it 'renders edit template' do
+        put :update, params: { id: cliente.id, cliente: { razao_social: nil} }
+        expect(response).to render_template(:edit)
       end
     end
   end
