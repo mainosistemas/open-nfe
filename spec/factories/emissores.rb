@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :emissor do
+    tipo_de_pessoa
     nome_fantasia 'FOO'
     razao_social 'FOO LTDA'
     inscricao_estadual '123456'
@@ -9,5 +10,7 @@ FactoryGirl.define do
     numero_do_endereco '123'
     complemento 'SL 123'
     bairro 'CENTRO'
+    uf
+    municipio
   end
 end

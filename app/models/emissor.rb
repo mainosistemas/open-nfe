@@ -15,8 +15,17 @@
 #  bairro              :string
 #  created_at          :datetime         not null
 #  updated_at          :datetime         not null
+#  tipo_de_pessoa_id   :integer          not null
+#  uf_id               :integer          not null
+#  municipio_id        :integer          not null
 #
 
 class Emissor < ApplicationRecord
   belongs_to :user
+  belongs_to :tipo_de_pessoa
+  belongs_to :uf
+  belongs_to :municipio
+  validates_presence_of :user, :tipo_de_pessoa, :nome_fantasia, :razao_social,
+    :inscricao_estadual, :cep, :logradouro, :numero_do_endereco, :complemento,
+    :bairro, :uf, :municipio
 end

@@ -11,7 +11,8 @@
 # end
 
 # These inflection rules are supported but not enabled by default:
-ActiveSupport::Inflector.inflections(:en) do |inflect|
+ActiveSupport::Inflector.inflections do |inflect|
   # inflect.acronym 'RESTful'
   inflect.irregular 'emissor', 'emissores'
+  inflect.irregular 'tipo_de_pessoa', 'tipos_de_pessoas'
 end

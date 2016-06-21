@@ -7,7 +7,7 @@ class EmissoresController < ApplicationController
 
   def create
     @emissor = current_user.build_emissor(emissor_params)
-    if @emissor.save
+    if @emissor.save!
       flash[:notice] = 'Emissor cadastrado com sucesso'
       redirect_to action: :new
     end
@@ -18,6 +18,7 @@ class EmissoresController < ApplicationController
     def emissor_params
       params.require(:emissor).permit(:nome_fantasia, :razao_social,
         :inscricao_estadual, :inscricao_municipal, :cep, :logradouro,
-        :numero_do_endereco, :complemento, :bairro)
+        :numero_do_endereco, :complemento, :bairro, :tipo_de_pessoa_id,
+        :uf_id, :municipio_id)
     end
 end

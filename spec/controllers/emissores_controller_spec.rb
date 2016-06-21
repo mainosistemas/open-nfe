@@ -21,7 +21,7 @@ RSpec.describe EmissoresController, type: :controller do
 
   describe 'POST create' do
     it 'creates emissor' do
-      emissor_params = attributes_for(:emissor)
+      emissor_params = build(:emissor).attributes
       post :create, params: { emissor: emissor_params }
       expect(user.reload.emissor).to be_a(Emissor)
     end
