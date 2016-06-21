@@ -11,10 +11,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160620153740) do
+ActiveRecord::Schema.define(version: 20160621000320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "emissores", force: :cascade do |t|
+    t.integer  "user_id",             null: false
+    t.string   "nome_fantasia"
+    t.string   "razao_social"
+    t.string   "inscricao_estadual"
+    t.string   "inscricao_municipal"
+    t.string   "cep"
+    t.string   "logradouro"
+    t.string   "numero_do_endereco"
+    t.string   "complemento"
+    t.string   "bairro"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
+
+  create_table "ufs", force: :cascade do |t|
+    t.integer  "codigo_ibge",      null: false
+    t.string   "nome",             null: false
+    t.string   "nome_por_extenso", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
