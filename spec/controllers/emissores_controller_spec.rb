@@ -21,10 +21,16 @@ RSpec.describe EmissoresController, type: :controller do
 
   describe 'POST create' do
     context 'when emissor is valid' do
+      let(:emissor_params) { build(:emissor).attributes }
+
       it 'creates emissor' do
-        emissor_params = build(:emissor).attributes
         post :create, params: { emissor: emissor_params }
         expect(user.reload.emissor).to be_a(Emissor)
+      end
+
+      it 'redirect to edit' do
+        post :create, params: { emissor: emissor_params }
+        expect(response).to redirect_to(edit_emissor_path(user.reload.emissor))
       end
     end
 
