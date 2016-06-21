@@ -7,9 +7,11 @@ class EmissoresController < ApplicationController
 
   def create
     @emissor = current_user.build_emissor(emissor_params)
-    if @emissor.save!
+    if @emissor.save
       flash[:notice] = 'Emissor cadastrado com sucesso'
       redirect_to action: :new
+    else
+      render :new
     end
   end
 
