@@ -1,8 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature 'CreatingEmissores', type: :feature do
-  let(:tipo_pessoa) { create(:tipo_pessoa) }
-  let(:uf) { create(:uf) }
   let(:user) { create(:user) }
 
   before do
