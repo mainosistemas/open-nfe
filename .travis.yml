@@ -1,11 +1,9 @@
 Language: ruby
 rvm:
   - 2.3.0
-addons:
-    code_climate:
-        repo_token: 40c2563fa947bf804bcc037264b7f052200912efeb65349d37afb7670c9023fb
+
 script:
   - bundle exec rake db:create
   - bundle exec rake db:migrate
   - bundle exec rake db:test:prepare
-  -  bundle exec rspec spec
+  - CODECLIMATE_REPO_TOKEN=40c2563fa947bf804bcc037264b7f052200912efeb65349d37afb7670c9023fb bundle exec rake
