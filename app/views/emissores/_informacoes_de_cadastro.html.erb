@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-12">
+    <h2>Informações cadastrais</h2>
+    <hr>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-3">
+    <div class="form-group">
+      <%= f.input :tipo_de_pessoa_id, collection: TipoDePessoa.all,
+        label_method: :nome_por_extenso, value_method: :id %>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <%= f.input :nome_fantasia %>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <%= f.input :razao_social %>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="form-group">
+      <%= f.input :inscricao_estadual %>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="form-group">
+        <%= f.input :inscricao_municipal %>
+    </div>
+  </div>
+</div>

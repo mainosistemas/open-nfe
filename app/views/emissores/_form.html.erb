@@ -1,0 +1,11 @@
+<%= simple_form_for @emissor, method: :post do |f| %>
+  <%= render 'informacoes_de_cadastro', f: f %>
+  <%= render 'informacoes_de_endereco', f: f %>
+  <div class="row">
+    <div class="col-md-3">
+      <div class="form-group">
+        <%= f.button :submit, 'Salvar', class: 'btn btn-primary' %>
+      </div>
+    </div>
+  </div>
+<% end %>
