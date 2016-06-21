@@ -20,6 +20,7 @@ gem 'cpf_faker'
 gem 'simple_form'
 
 group :development, :test do
+  gem 'codeclimate-test-reporter', require: nil
   gem 'formulaic'
   gem 'capybara'
   gem 'rails-controller-testing', git: 'https://github.com/rails/rails-controller-testing'
