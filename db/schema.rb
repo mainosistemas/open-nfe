@@ -11,10 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621163208) do
+ActiveRecord::Schema.define(version: 20160621210654) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "clientes", force: :cascade do |t|
+    t.integer  "tipo_de_pessoa_id",   null: false
+    t.string   "numero_do_documento", null: false
+    t.string   "inscricao_estadual"
+    t.string   "inscricao_municipal"
+    t.string   "razao_social",        null: false
+    t.string   "nome_fantasia"
+    t.string   "cep",                 null: false
+    t.string   "endereco",            null: false
+    t.string   "numero"
+    t.string   "complemento"
+    t.string   "bairro",              null: false
+    t.integer  "pais_id",             null: false
+    t.integer  "uf_id",               null: false
+    t.integer  "municipio_id",        null: false
+    t.integer  "user_id",             null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+  end
 
   create_table "emissores", force: :cascade do |t|
     t.integer  "user_id",             null: false
@@ -41,6 +61,14 @@ ActiveRecord::Schema.define(version: 20160621163208) do
     t.integer  "uf_id",                       null: false
     t.datetime "created_at",                  null: false
     t.datetime "updated_at",                  null: false
+  end
+
+  create_table "paises", force: :cascade do |t|
+    t.string   "nome",            null: false
+    t.integer  "codigo_ibge",     null: false
+    t.string   "codigo_siscomex", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "tipos_de_pessoas", force: :cascade do |t|
