@@ -18,6 +18,10 @@ gem 'factory_girl_rails'
 gem 'faker'
 gem 'cpf_faker'
 gem 'simple_form'
+gem 'draper', '~> 1.3'
+
+# O draper depende dessa gem para funcionar no rails5
+gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
 
 group :development, :test do
   gem 'codeclimate-test-reporter', require: nil
