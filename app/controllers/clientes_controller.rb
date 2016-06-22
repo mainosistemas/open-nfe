@@ -29,14 +29,15 @@ class ClientesController < ApplicationController
   end
 
   private
-    def find_cliente
-      @cliente = current_user.clientes.find(params[:id])
-    end
 
-    def cliente_params
-      params.require(:cliente).permit(:tipo_de_pessoa_id, :numero_do_documento,
-        :inscricao_estadual, :inscricao_municipal, :razao_social, :cep,
-        :endereco, :numero, :complemento, :bairro, :pais_id, :uf_id,
-        :municipio_id)
-    end
+  def find_cliente
+    @cliente = current_user.clientes.find(params[:id])
+  end
+
+  def cliente_params
+    params.require(:cliente).permit(:tipo_de_pessoa_id, :numero_do_documento,
+      :inscricao_estadual, :inscricao_municipal, :razao_social, :cep,
+      :endereco, :numero, :complemento, :bairro, :pais_id, :uf_id,
+      :municipio_id)
+  end
 end

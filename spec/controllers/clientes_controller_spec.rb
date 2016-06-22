@@ -82,14 +82,18 @@ RSpec.describe ClientesController, type: :controller do
 
       it 'updates cliente' do
         expect do
-          put :update, params: { id: cliente.id,
-            cliente: { razao_social: 'fooo inc' } }
+          put :update, params: {
+            id: cliente.id,
+            cliente: { razao_social: 'fooo inc' }
+          }
         end.to change { cliente.reload.razao_social }.from('foo').to('fooo inc')
       end
 
       it 'redirect to edit path' do
-        put :update, params: { id: cliente.id,
-          cliente: { razao_social: 'fooo inc' } }
+        put :update, params: {
+          id: cliente.id,
+          cliente: { razao_social: 'fooo inc' }
+        }
         expect(response).to redirect_to(edit_cliente_path(cliente))
       end
     end
@@ -99,13 +103,15 @@ RSpec.describe ClientesController, type: :controller do
 
       it 'not updates cliente' do
         expect do
-          put :update, params: { id: cliente.id,
-            cliente: { razao_social: nil } }
+          put :update, params: {
+            id: cliente.id,
+            cliente: { razao_social: nil }
+          }
         end.to_not change { cliente.reload.razao_social }.from('foo')
       end
 
       it 'renders edit template' do
-        put :update, params: { id: cliente.id, cliente: { razao_social: nil} }
+        put :update, params: { id: cliente.id, cliente: { razao_social: nil } }
         expect(response).to render_template(:edit)
       end
     end
