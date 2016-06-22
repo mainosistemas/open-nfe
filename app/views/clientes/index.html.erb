@@ -1,0 +1,22 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Tipo de pessoa</th>
+      <th>CNPJ/CPF</th>
+      <th>Razão social</th>
+      <th>UF</th>
+      <th>Ações</th>
+    </tr>
+    <tbody>
+      <% @clientes.each do |cliente| %>
+        <tr>
+          <td><%= cliente.tipo_de_pessoa_codigo %></td>
+          <td><%= cliente.numero_do_documento %></td>
+          <td><%= cliente.razao_social %></td>
+          <td><%= cliente.uf_nome %></td>
+          <td><%= cliente.menu_de_acoes %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </thead>
+</table>

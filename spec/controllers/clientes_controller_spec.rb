@@ -7,42 +7,53 @@ RSpec.describe ClientesController, type: :controller do
     sign_in user
   end
 
+  describe 'GET index' do
+    let(:clientes) { create_list(:cliente, 3, user: user) }
+    let(:outro_usuario) { create(:user) }
+    let(:cliente_de_outro_usuario) { create(:cliente, user: outro_usuario) }
+
+    it 'define @clientes somente com os clientes do usuário' do
+      get :index
+      expect(assigns(:clientes)).to eq clientes
+    end
+  end
+
   describe 'GET new' do
-    it 'assigns @cliente' do
+    it 'define @cliente' do
       get :new
       expect(assigns(:cliente)).to be_a(Cliente)
     end
 
-    it 'renders the new template' do
+    it 'renderiza o template new' do
       get :new
       expect(response).to render_template(:new)
     end
   end
 
   describe 'POST create' do
-    context 'when cliente is valid' do
+    context 'quando o cliente é válido' do
       let(:cliente_params) { build(:cliente).attributes }
 
-      it 'creates cliente' do
+      it 'cadastra o cliente' do
         post :create, params: { cliente: cliente_params }
         expect(user.clientes.count).to eq(1)
       end
 
-      it 'redirect to edit path' do
+      it 'redireciona para o edit path' do
         post :create, params: { cliente: cliente_params }
         expect(response).to redirect_to(edit_cliente_path(Cliente.first))
       end
     end
 
-    context 'when cliente is invalid' do
+    context 'quando o cliente não é válido' do
       let(:cliente_params) { Cliente.new.attributes }
 
-      it 'not creates cliente' do
+      it 'não cadastra o cliente' do
         post :create, params: { cliente: cliente_params }
         expect(user.clientes.count).to eq(0)
       end
 
-      it 'renders the new template' do
+      it 'renderiza o new template' do
         post :create, params: { cliente: cliente_params }
         expect(response).to render_template(:new)
       end
@@ -50,21 +61,21 @@ RSpec.describe ClientesController, type: :controller do
   end
 
   describe 'GET edit' do
-    context 'when cliente belongs to user' do
+    context 'quando o cliente pertence ao usuário' do
       let!(:cliente) { create(:cliente, user: user) }
 
-      it 'assigns @cliente from user' do
+      it 'define @cliente' do
         get :edit, params: { id: cliente.id }
         expect(assigns(:cliente)).to eq(cliente)
       end
 
-      it 'renders the edit template' do
+      it 'renderiza o edit path' do
         get :edit, params: { id: cliente.id }
         expect(response).to render_template(:edit)
       end
     end
 
-    context 'when cliente not belongs to user' do
+    context 'quando o cliente não pertence ao usuário' do
       let!(:another_user) { create(:user) }
       let!(:another_cliente) { create(:cliente, user: another_user) }
 
@@ -77,10 +88,10 @@ RSpec.describe ClientesController, type: :controller do
   end
 
   describe 'PUT update' do
-    context 'when cliente is valid' do
+    context 'quando o cliente não é válido' do
       let(:cliente) { create(:cliente, user: user) }
 
-      it 'updates cliente' do
+      it 'atualiza o cliente' do
         expect do
           put :update, params: {
             id: cliente.id,
@@ -89,7 +100,7 @@ RSpec.describe ClientesController, type: :controller do
         end.to change { cliente.reload.razao_social }.from('foo').to('fooo inc')
       end
 
-      it 'redirect to edit path' do
+      it 'redireciona para o edit path' do
         put :update, params: {
           id: cliente.id,
           cliente: { razao_social: 'fooo inc' }
@@ -98,7 +109,7 @@ RSpec.describe ClientesController, type: :controller do
       end
     end
 
-    context 'when cliente is invalid' do
+    context 'quando o cliente não é válido' do
       let(:cliente) { create(:cliente, user: user) }
 
       it 'not updates cliente' do
@@ -110,7 +121,7 @@ RSpec.describe ClientesController, type: :controller do
         end.to_not change { cliente.reload.razao_social }.from('foo')
       end
 
-      it 'renders edit template' do
+      it 'renderiza o edit template' do
         put :update, params: { id: cliente.id, cliente: { razao_social: nil } }
         expect(response).to render_template(:edit)
       end

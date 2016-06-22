@@ -2,6 +2,10 @@ class ClientesController < ApplicationController
   before_action :authenticate_user!
   before_action :find_cliente, only: [:edit, :update]
 
+  def index
+    @clientes = current_user.clientes.decorate
+  end
+
   def new
     @cliente = current_user.clientes.new
   end

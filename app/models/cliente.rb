@@ -29,6 +29,9 @@ class Cliente < ApplicationRecord
   belongs_to :uf
   belongs_to :pais
 
+  delegate :codigo, to: :tipo_de_pessoa, prefix: true, allow_nil: true
+  delegate :nome, to: :uf, prefix: true, allow_nil: true
+
   validates_presence_of :tipo_de_pessoa_id, :numero_do_documento,
     :razao_social, :cep, :endereco, :bairro, :pais_id, :uf_id, :municipio_id,
     :user_id
