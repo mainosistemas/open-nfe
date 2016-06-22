@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   }
 
   resources :emissores, except: [:show, :destroy]
-  resources :clientes, only: [:new, :create, :edit]
+  resources :clientes, except: [:index, :show, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

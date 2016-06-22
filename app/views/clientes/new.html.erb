@@ -1,18 +1,1 @@
-<%= simple_form_for(@cliente) do |f| %>
-  <%= f.input :tipo_de_pessoa_id, collection: TipoDePessoa.all,
-    label_method: :nome_por_extenso, value_method: :id %>
-  <%= f.input :numero_do_documento %>
-  <%= f.input :inscricao_estadual %>
-  <%= f.input :inscricao_municipal %>
-  <%= f.input :razao_social %>
-  <%= f.input :cep %>
-  <%= f.input :endereco %>
-  <%= f.input :numero %>
-  <%= f.input :complemento %>
-  <%= f.input :bairro %>
-  <%= f.input :pais_id, collection: Pais.all,
-    label_method: :nome, value_method: :id %>
-  <%= f.input :uf_id, collection: Uf.all, label_method: :nome_por_extenso %>
-  <%= f.input :municipio_id, collection: Municipio.all, label_method: :nome %>
-  <%= f.submit 'Salvar' %>
-<% end %>
+<%= render 'form' %>
