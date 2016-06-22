@@ -28,7 +28,7 @@ group :development, :test do
   gem 'formulaic'
   gem 'capybara'
   gem 'rails-controller-testing', git: 'https://github.com/rails/rails-controller-testing'
-  gem 'rspec-rails', '3.5.0.beta1'
+  gem 'rspec-rails', '3.5.0.beta2'
   gem 'pry-rails'
   gem 'byebug', platform: :mri
 end
