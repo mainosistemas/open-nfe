@@ -35,9 +35,12 @@ class ClientesController < ApplicationController
   end
 
   def cliente_params
-    params.require(:cliente).permit(:tipo_de_pessoa_id, :numero_do_documento,
-      :inscricao_estadual, :inscricao_municipal, :razao_social, :cep,
-      :endereco, :numero, :complemento, :bairro, :pais_id, :uf_id,
-      :municipio_id)
+    params.require(:cliente).permit(
+      :tipo_de_pessoa_id, :numero_do_documento,
+      :inscricao_estadual, :inscricao_municipal,
+      :razao_social, :cep, :endereco, :numero,
+      :complemento, :bairro, :pais_id, :uf_id,
+      :municipio_id
+    )
   end
 end
