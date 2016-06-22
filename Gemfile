@@ -18,7 +18,7 @@ gem 'factory_girl_rails'
 gem 'faker'
 gem 'cpf_faker'
 gem 'simple_form'
-gem 'draper', '~> 1.3'
+gem 'draper', github: 'audionerd/draper', branch: 'rails5'
 
 # O draper depende dessa gem para funcionar no rails5
 gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml.git'
