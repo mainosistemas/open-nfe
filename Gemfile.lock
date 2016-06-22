@@ -1,14 +1,4 @@
 GIT
-  remote: git://github.com/rails/activemodel-serializers-xml.git
-  revision: 570ee7ed33d60e44ca1f3ccbec3d1fbf61d52cbf
-  specs:
-    activemodel-serializers-xml (1.0.1)
-      activemodel (> 5.x)
-      activerecord (> 5.x)
-      activesupport (> 5.x)
-      builder (~> 3.1)
-
-GIT
   remote: https://github.com/plataformatec/devise.git
   revision: ac702843ddaa5652fde7a0050ff2378e7368149e
   specs:
@@ -18,6 +8,16 @@ GIT
       railties (>= 4.1.0, < 5.1)
       responders
       warden (~> 1.2.3)
+
+GIT
+  remote: https://github.com/rails/activemodel-serializers-xml.git
+  revision: 570ee7ed33d60e44ca1f3ccbec3d1fbf61d52cbf
+  specs:
+    activemodel-serializers-xml (1.0.1)
+      activemodel (> 5.x)
+      activerecord (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
 
 GIT
   remote: https://github.com/rails/rails-controller-testing

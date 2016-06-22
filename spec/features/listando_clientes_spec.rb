@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.feature 'Listando Clientes', type: :feature do
-
   let(:user) { create(:user) }
 
   before do

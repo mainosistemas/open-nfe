@@ -21,7 +21,7 @@ gem 'simple_form'
 gem 'draper', '~> 1.3'
 
 # O draper depende dessa gem para funcionar no rails5
-gem 'activemodel-serializers-xml', github: 'rails/activemodel-serializers-xml'
+gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml.git'
 
 group :development, :test do
   gem 'codeclimate-test-reporter', require: nil
