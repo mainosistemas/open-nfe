@@ -10,6 +10,7 @@
 - Bundle (`gem install bundle`)
 - PostgreSQL
 - Redis
+
 ## Instalação:
 - Dentro do projeto execute `bundle install`
 - Execute `cp config/database.example.yml config/database.yml` e faça qualquer configuração necessária no database.yml
