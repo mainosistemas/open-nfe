@@ -15,5 +15,5 @@
 - Dentro do projeto execute `bundle install`
 - Execute `cp config/database.example.yml config/database.yml` e faça qualquer configuração necessária no database.yml
 - Execute `rake db:create && rake db:migrate && rake db:seed && rake db:test:prepare`
-- Se quiser execute `rspec` para que todos os testes sejam executados e verificar se tudo está funcionando
+- Se quiser, execute `rspec` para que todos os testes sejam executados e verificar se tudo está funcionando
 - Pronto!
