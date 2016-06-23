@@ -1,11 +1,16 @@
-<%= simple_form_for @emissor do |f| %>
-  <%= render 'informacoes_de_cadastro', f: f %>
-  <%= render 'informacoes_de_endereco', f: f %>
-  <div class="row">
-    <div class="col-md-3">
-      <div class="form-group">
-        <%= f.button :submit, 'Salvar', class: 'btn btn-primary' %>
+<div class="panel panel-default">
+  <div class="panel-heading">Cadastro de emissor</div>
+  <div class="panel-body">
+    <%= simple_form_for @emissor do |f| %>
+      <%= render 'informacoes_de_cadastro', f: f %>
+      <%= render 'informacoes_de_endereco', f: f %>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group pull-right">
+            <%= f.button :submit, 'Salvar', class: 'btn btn-primary' %>
+          </div>
+        </div>
       </div>
-    </div>
+    <% end %>
   </div>
-<% end %>
+</div>
