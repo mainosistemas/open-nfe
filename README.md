@@ -6,7 +6,7 @@
 
 # Configurando o projeto:
 ## Dependências:
-- Ruby 2.3.0
+- Ruby 2.3.1
 - Bundle (`gem install bundle`)
 - PostgreSQL
 - Redis
