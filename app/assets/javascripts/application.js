@@ -15,3 +15,9 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require icheck
+//= require dataTables.bootstrap.min
+//= jquery.slimscroll.min
+//= fastclick.min
+//= app.min
+//= demo
+//= select2.full.min

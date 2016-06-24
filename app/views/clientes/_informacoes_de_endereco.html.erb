@@ -1,59 +1,36 @@
-<div class="row">
-  <div class="col-md-12">
-    <h2>Endereço</h2>
-    <hr/>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-3">
-    <div class="form-group">
-      <%= f.input :cep %>
-    </div>
+<div class="box box-default">
+  <div class="box-header with-border">
+    <h3 class="box-title">Endereço</h3>
   </div>
 
-  <div class="col-md-3">
-    <div class="form-group">
-      <%= f.input :endereco %>
-    </div>
-  </div>
-
-  <div class="col-md-3">
-    <div class="form-group">
-      <%= f.input :numero %>
-    </div>
-  </div>
-
-  <div class="col-md-3">
-    <div class="form-group">
-      <%= f.input :complemento %>
-    </div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-md-3">
-    <div class="form-group">
-      <%= f.input :bairro %>
-    </div>
-  </div>
-
-  <div class="col-md-3">
-    <div class="form-group">
-      <%= f.input :pais_id, collection: Pais.all,
-        label_method: :nome, value_method: :id %>
-    </div>
-  </div>
-
-  <div class="col-md-3">
-    <div class="form-group">
-      <%= f.input :uf_id, collection: Uf.all, label_method: :nome_por_extenso %>
-    </div>
-  </div>
-
-  <div class="col-md-3">
-    <div class="form-group">
-      <%= f.input :municipio_id, collection: Municipio.all, label_method: :nome %>
+  <div class="box-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <%= f.input :cep %>
+        </div>
+        <div class="form-group">
+          <%= f.input :endereco %>
+        </div>
+        <div class="form-group">
+          <%= f.input :numero %>
+        </div>
+        <div class="form-group">
+          <%= f.input :complemento %>
+        </div>
+        <div class="form-group">
+          <%= f.input :bairro %>
+        </div>
+        <div class="form-group">
+          <%= f.input :pais_id, collection: Pais.all, label_method: :nome, value_method: :id %>
+        </div>
+        <div class="form-group">
+          <%= f.input :uf_id, collection: Uf.all, label_method: :nome_por_extenso %>
+        </div>
+        <div class="form-group">
+          <%= f.input :municipio_id, collection: Municipio.all, label_method: :nome %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
