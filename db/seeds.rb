@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 TipoDePessoa.create(codigo: 'F', nome_por_extenso: 'Pessoa física')
-TipoDePessoa.create(codigo: 'j', nome_por_extenso: 'Pessoa jurídica')
+TipoDePessoa.create(codigo: 'J', nome_por_extenso: 'Pessoa jurídica')
 TipoDePessoa.create(codigo: 'E', nome_por_extenso: 'Estrangeiro')
 
 30.times.each do |i|
