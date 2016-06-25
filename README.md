@@ -1,4 +1,6 @@
 # open-nfe
+
+[![Join the chat at https://gitter.im/mainosistemas/open-nfe](https://badges.gitter.im/mainosistemas/open-nfe.svg)](https://gitter.im/mainosistemas/open-nfe?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 [![Build Status](https://travis-ci.org/mainosistemas/open-nfe.svg?branch=master)](https://travis-ci.org/mainosistemas/open-nfe)
 [![Code Climate](https://codeclimate.com/github/mainosistemas/open-nfe/badges/gpa.svg)](https://codeclimate.com/github/mainosistemas/open-nfe)
 [![Test Coverage](https://codeclimate.com/github/mainosistemas/open-nfe/badges/coverage.svg)](https://codeclimate.com/github/mainosistemas/open-nfe/coverage)
