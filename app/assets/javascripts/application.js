@@ -21,3 +21,4 @@
 //= app.min
 //= demo
 //= select2.full.min
+//= jquery.dataTables.min
