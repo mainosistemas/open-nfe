@@ -17,3 +17,19 @@
 - Execute `rake db:create && rake db:migrate && rake db:seed && rake db:test:prepare`
 - Se quiser, execute `rspec` para que todos os testes sejam executados e verificar se tudo está funcionando
 - Pronto!
+
+# Utilizando o Vagrant:
+## Dependências:
+- Vagrant
+- VirtualBox
+
+## No Windows:
+- Algum cliente SSH. Recomendo utilizar o [cmder](http://cmder.net/), que já vem com um cliente SSH instalado
+
+# Instalação:
+- Abra o terminal com permissão de administrador
+- Execute `vagrant up`
+- Quando a instalação terminar, acesse a VM com o comando `vagrant ssh`
+- Dentro da VM, acesse a pasta `/vagrant` (`cd /vagrant`)
+- Execute `rails s -b 0.0.0.0`
+- No host, acesse `localhost:3000`
