@@ -20,6 +20,7 @@ gem 'faker'
 gem 'cpf_faker'
 gem 'simple_form'
 gem 'draper', git: 'https://github.com/audionerd/draper', branch: 'rails5'
+gem 'poltergeist'
 
 # O draper depende dessa gem para funcionar no rails5
 gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml.git'
@@ -28,6 +29,7 @@ group :development, :test do
   gem 'codeclimate-test-reporter', require: nil
   gem 'formulaic'
   gem 'capybara'
+  gem 'database_cleaner'
   gem 'rails-controller-testing', git: 'https://github.com/rails/rails-controller-testing'
   gem 'rspec-rails', '3.5.0.beta4'
   gem 'pry-rails'
