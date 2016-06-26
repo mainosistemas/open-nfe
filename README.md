@@ -29,6 +29,7 @@
 # Instalação:
 - Abra o terminal com permissão de administrador
 - Execute `vagrant up`
+- No Windows, será necessário inserir as credenciais de usuário do sistema para que o Vagrant consiga levantar uma rede SMB
 - Quando a instalação terminar, acesse a VM com o comando `vagrant ssh`
 - Dentro da VM, acesse a pasta `/vagrant` (`cd /vagrant`)
 - Execute `rails s -b 0.0.0.0`
