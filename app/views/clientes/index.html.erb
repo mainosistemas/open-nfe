@@ -14,7 +14,11 @@
           <td><%= cliente.numero_do_documento %></td>
           <td><%= cliente.razao_social %></td>
           <td><%= cliente.uf_nome %></td>
-          <td><%= cliente.menu_de_acoes %></td>
+          <td>
+            <%= link_to('Editar', edit_cliente_path(cliente)) %> /
+            <%= link_to 'Deletar', cliente, method: :delete, data: {
+              confirm: "Tem certeza que deseja deletar o cliente #{cliente.razao_social}" } %>
+          </td>
         </tr>
       <% end %>
     </tbody>
