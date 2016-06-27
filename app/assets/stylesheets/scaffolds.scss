@@ -1,6 +1,12 @@
+$branco: #fff;
+$cinza_escuro: #333;
+$cinza_claro: #eee;
+$preto: #000
+$background-error: #f0f0f0
+
 body {
-  background-color: #fff;
-  color: #333;
+  background-color: $branco;
+  color: $cinza_escuro;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -15,21 +21,21 @@ p, ol, ul, td {
 }
 
 pre {
-  background-color: #eee;
+  background-color: $cinza_claro;
   padding: 10px;
   font-size: 11px;
 }
 
 a {
-  color: #000;
+  color: $preto;
 
   &:visited {
-    color: #fff;
+    color: $branco;
   }
 
   &:hover {
-    color: #fff;
-    background-color: #000;
+    color: $branco;
+    background-color: $preto;
   }
 }
 
@@ -65,7 +71,7 @@ div {
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
-  background-color: #f0f0f0;
+  background-color: $backgound-error;
 
   h2 {
     text-align: left;
@@ -75,7 +81,7 @@ div {
     margin: -7px;
     margin-bottom: 0;
     background-color: #c00;
-    color: #fff;
+    color: $branco;
   }
 
   ul li {
