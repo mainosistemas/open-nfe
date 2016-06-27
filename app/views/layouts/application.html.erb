@@ -46,11 +46,16 @@
         <li class="header">MENU</li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Notas Fiscais</span> <i class="fa fa-angle-left pull-right"></i>
+            <i class="fa fa-dashboard"></i> <span>Emitentes</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
         </li>
         <li class="treeview">
           <a href="#">
+            <i class="fa fa-dashboard"></i> <span>Notas Fiscais</span> <i class="fa fa-angle-left pull-right"></i>
+          </a>
+        </li>
+        <li class="treeview">
+          <a href="/clientes">
             <i class="fa fa-dashboard"></i> <span>Clientes</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
         </li>
@@ -64,11 +69,10 @@
     <!-- /.sidebar -->
   </aside>
 
-  <!-- Content Wrapper. Contains page content -->
-  <%= yield %>
+  <div class="main-content">
+    <%= yield %>
+  </div>
 
-
-  <!-- /.content-wrapper -->
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 1.0.0

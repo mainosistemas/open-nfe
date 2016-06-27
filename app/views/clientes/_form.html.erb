@@ -13,26 +13,15 @@
       </ol>
     </section>
 
-    <!-- Main content -->
     <section class="content">
-
-      <%= render 'submit', f: f %>
-      <!-- /.box -->
-
       <div class="row">
-        <div class="col-md-6">
-      	<%= render 'informacoes_de_cadastro', f: f %>
-        </div>
-        <!-- /.col (left) -->
-        <div class="col-md-6">
+        <div class="col-md-12">
+      	  <%= render 'informacoes_de_cadastro', f: f %>
           <%= render 'informacoes_de_endereco', f: f %>
         </div>
-        <!-- /.col (right) -->
       </div>
-      <!-- /.row -->
-
+      <%= render 'submit', f: f %>
     </section>
-    <!-- /.content -->
   </div>
 <% end %>
 
