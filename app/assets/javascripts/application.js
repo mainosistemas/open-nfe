@@ -12,6 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
+//= require bootstrap-sprockets
 //= require turbolinks
-//= require_tree .
+//= require icheck
+//= require dataTables.bootstrap.min
+//= jquery.slimscroll.min
+//= fastclick.min
+//= app.min
+//= demo
+//= select2.full.min
+//= jquery.dataTables.min

@@ -30,6 +30,7 @@ class Cliente < ApplicationRecord
   belongs_to :pais
 
   delegate :codigo, to: :tipo_de_pessoa, prefix: true, allow_nil: true
+  delegate :nome_por_extenso, to: :tipo_de_pessoa, prefix: true, allow_nil: true
   delegate :nome, to: :uf, prefix: true, allow_nil: true
 
   validates_presence_of :tipo_de_pessoa_id, :numero_do_documento,

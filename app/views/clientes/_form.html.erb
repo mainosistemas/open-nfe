@@ -1,10 +1,27 @@
-<div class="panel panel-default">
-  <div class="panel-heading">Cadastro de cliente</div>
-  <div class="panel-body">
-    <%= simple_form_for(@cliente) do |f| %>
-      <%= render 'informacoes_de_cadastro', f: f %>
-      <%= render 'informacoes_de_endereco', f: f %>
+<%= simple_form_for(@cliente) do |f| %>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>
+        Clientes
+        <small>Formulário</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><a href="/clientes">Clientes</a></li>
+        <li class="active">Formulário</li>
+      </ol>
+    </section>
+
+    <section class="content">
+      <div class="row">
+        <div class="col-md-12">
+      	  <%= render 'informacoes_de_cadastro', f: f %>
+          <%= render 'informacoes_de_endereco', f: f %>
+        </div>
+      </div>
       <%= render 'submit', f: f %>
-    <% end %>
+    </section>
   </div>
-</div>
+<% end %>
+
