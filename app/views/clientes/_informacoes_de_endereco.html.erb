@@ -42,12 +42,12 @@
       </div>
       <div class="col-md-3">
         <div class="form-group">
-          <%= f.input :uf_id, collection: Uf.all, label_method: :nome %>
+          <%= f.input :uf_id, collection: Uf.all, label_method: :nome_por_extenso, value_method: :id %>
         </div>
       </div>
       <div class="col-md-5">
         <div class="form-group">
-          <%= f.input :municipio_id, collection: Municipio.all, label_method: :nome %>
+          <%= f.input :municipio_id, collection: Municipio.all, label_method: :nome, value_method: :id %>
         </div>
       </div>
     </div>
