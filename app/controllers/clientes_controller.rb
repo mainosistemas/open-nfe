@@ -1,6 +1,6 @@
 class ClientesController < ApplicationController
   before_action :authenticate_user!
-  before_action :find_cliente, only: [:edit, :update]
+  before_action :find_cliente, only: [:edit, :update, :destroy]
 
   def index
     @clientes = current_user.clientes.decorate
@@ -14,7 +14,7 @@ class ClientesController < ApplicationController
     @cliente = current_user.clientes.new(cliente_params)
     if @cliente.save
       flash[:notice] = 'Cliente cadastrado com sucesso'
-      redirect_to action: :edit, id: @cliente.id
+      redirect_to edit_cliente_path(@cliente)
     else
       render :new
     end
@@ -26,10 +26,16 @@ class ClientesController < ApplicationController
   def update
     if @cliente.update(cliente_params)
       flash[:notice] = 'Cliente atualizado com sucesso'
-      redirect_to action: :edit, id: @cliente.id
+      redirect_to edit_cliente_path(@cliente)
     else
       render :edit
     end
+  end
+
+  def destroy
+    @cliente.destroy
+    flash[:notice] = 'Cliente deletado com sucesso'
+    redirect_to clientes_path
   end
 
   private

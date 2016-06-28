@@ -7,7 +7,7 @@ RSpec.describe ClientesController, type: :controller do
     sign_in user
   end
 
-  describe 'GET index' do
+  describe 'GET #index' do
     let(:clientes) { create_list(:cliente, 3, user: user) }
     let(:outro_usuario) { create(:user) }
     let(:cliente_de_outro_usuario) { create(:cliente, user: outro_usuario) }
@@ -18,7 +18,7 @@ RSpec.describe ClientesController, type: :controller do
     end
   end
 
-  describe 'GET new' do
+  describe 'GET #new' do
     it 'define @cliente' do
       get :new
       expect(assigns(:cliente)).to be_a(Cliente)
@@ -30,7 +30,7 @@ RSpec.describe ClientesController, type: :controller do
     end
   end
 
-  describe 'POST create' do
+  describe 'POST #create' do
     context 'quando o cliente é válido' do
       let(:cliente_params) { build(:cliente).attributes }
 
@@ -60,7 +60,7 @@ RSpec.describe ClientesController, type: :controller do
     end
   end
 
-  describe 'GET edit' do
+  describe 'GET #edit' do
     context 'quando o cliente pertence ao usuário' do
       let!(:cliente) { create(:cliente, user: user) }
 
@@ -87,7 +87,7 @@ RSpec.describe ClientesController, type: :controller do
     end
   end
 
-  describe 'PUT update' do
+  describe 'PUT #update' do
     context 'quando o cliente não é válido' do
       let(:cliente) { create(:cliente, user: user) }
 
@@ -125,6 +125,21 @@ RSpec.describe ClientesController, type: :controller do
         put :update, params: { id: cliente.id, cliente: { razao_social: nil } }
         expect(response).to render_template(:edit)
       end
+    end
+  end
+
+  describe 'DELETE #destroy' do
+    let!(:cliente) { create(:cliente, user: user) }
+
+    it 'deleta o cliente' do
+      expect do
+        delete :destroy, params: { id: cliente.id }
+      end.to change { user.reload.clientes.count }.from(1).to(0)
+    end
+
+    it 'redireciona para o index path' do
+      delete :destroy, params: { id: cliente.id }
+      expect(response).to redirect_to(clientes_path)
     end
   end
 end

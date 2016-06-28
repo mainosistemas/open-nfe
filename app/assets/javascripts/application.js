@@ -15,10 +15,7 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require icheck
-//= require dataTables.bootstrap.min
-//= jquery.slimscroll.min
-//= fastclick.min
-//= app.min
-//= demo
-//= select2.full.min
-//= jquery.dataTables.min
+//= require jquery.slimscroll.min
+//= require fastclick.min
+//= require admin_ltde/app.min
+//= require select2.full.min
