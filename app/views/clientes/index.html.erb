@@ -1,26 +1,52 @@
-<table class="table">
-  <thead>
-    <tr>
-      <th>Tipo de pessoa</th>
-      <th>CNPJ/CPF</th>
-      <th>Razão social</th>
-      <th>UF</th>
-      <th><%= link_to 'Cadastrar', new_cliente_path %></th>
-    </tr>
-    <tbody>
-      <% @clientes.each do |cliente| %>
-        <tr>
-          <td><%= cliente.tipo_de_pessoa_codigo %></td>
-          <td><%= cliente.numero_do_documento %></td>
-          <td><%= cliente.razao_social %></td>
-          <td><%= cliente.uf_nome %></td>
-          <td>
-            <%= link_to('Editar', edit_cliente_path(cliente)) %> /
-            <%= link_to 'Deletar', cliente, method: :delete, data: {
-              confirm: "Tem certeza que deseja deletar o cliente #{cliente.razao_social}" } %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </thead>
-</table>
+<div class="content-wrapper">
+  <section class="content-header">
+    <h1>
+      Clientes
+      <small>lista</small>
+    </h1>
+    <ol class="breadcrumb">
+      <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+      <li class="active">Clientes</li>
+    </ol>
+  </section>
+
+  <section class="content">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="box">
+          <div class="box-header">
+            <h3 class="box-title">Clientes</h3>
+          </div>
+          <div class="box-body">
+            <table class="table table-bordered table-hover">
+              <thead>
+                <tr>
+                  <th width="150px">Tipo de pessoa</th>
+                  <th width="150px">CNPJ/CPF</th>
+                  <th>Razão social</th>
+                  <th width="50px">UF</th>
+                  <th width="100px"><%= link_to 'Cadastrar', new_cliente_path, class: 'btn btn-primary btn-flat' %></th>
+                </tr>
+              </thead>
+              <tbody>
+              <% @clientes.each do |cliente| %>
+                <tr>
+                  <td><%= cliente.tipo_de_pessoa_nome_por_extenso %></td>
+                  <td><%= cliente.numero_do_documento %></td>
+                  <td><%= cliente.razao_social %></td>
+                  <td><%= cliente.uf_nome %></td>
+                  <td>
+                    <%= link_to('Editar', edit_cliente_path(cliente)) %> /
+                    <%= link_to 'Deletar', cliente, method: :delete, data: {
+                        confirm: "Tem certeza que deseja deletar o cliente #{cliente.razao_social}" } %>
+                  </td>
+                </tr>
+              <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

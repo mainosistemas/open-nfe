@@ -12,6 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require twitter/bootstrap
+//= require bootstrap-sprockets
 //= require turbolinks
-//= require_tree .
+//= require icheck
+//= require jquery.slimscroll.min
+//= require fastclick.min
+//= require admin_ltde/app.min
+//= require select2.full.min

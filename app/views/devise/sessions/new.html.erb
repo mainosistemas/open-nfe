@@ -1,48 +1,52 @@
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="row">
-    <div class="col-md-3">
-      <h2>Acessar</h2>
-    </div>
+<body class="hold-transition login-page">
+<div class="login-box">
+  <div class="login-logo">
+    <a href="../../index2.html"><b>Open</b>NFe</a>
   </div>
+  <!-- /.login-logo -->
+  <div class="login-box-body">
+    <p class="login-box-msg">Acessar</p>
 
-  <div class="row">
-    <div class="col-md-3">
-      <div class="form-group">
-        <%= f.email_field :email, autofocus: true,
-          class: 'form-control', placeholder: 'Email' %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="form-group has-feedback">
+        <%= f.email_field :email, autofocus: true, class: 'form-control', placeholder: 'Email' %>
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-3">
-      <div class="form-group">
-        <%= f.password_field :password, autocomplete: "off",
-          class: 'form-control', placeholder: 'Senha' %>
+      <div class="form-group has-feedback">
+        <%= f.password_field :password, autocomplete: "off", class: 'form-control', placeholder: 'Senha' %>
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-3">
-      <div class="form-group">
-        <% if devise_mapping.rememberable? -%>
-          <%= f.check_box :remember_me %>
-          <%= f.label :remember_me, value: 'Lembrar senha' %>
-        <% end -%>
+      <div class="row">
+        <div class="col-xs-8">
+          <div class="checkbox icheck">
+          <% if devise_mapping.rememberable? -%>
+            <%#= f.check_box :remember_me %>
+            <%#= f.label :remember_me, value: 'Lembrar senha' %>
+          <% end -%>
+          </div>
+        </div>
+        <!-- /.col -->
+        <div class="col-xs-4">
+          <%= f.submit "Acessar", class: 'btn btn-primary btn-block btn-flat' %>
+        </div>
+        <!-- /.col -->
       </div>
-    </div>
+    <% end %>
+    <%= render "devise/shared/links" %>
   </div>
+  <!-- /.login-box-body -->
+</div>
+<!-- /.login-box -->
 
-  <div class="row">
-    <div class="col-md-3">
-      <div class="form-group">
-        <%= f.submit "Acessar", class: 'btn btn-primary' %>
-      </div>
-    </div>
-  </div>
-
-<% end %>
-
-<%= render "devise/shared/links" %>
+<script>
+  $(function () {
+    $('input').iCheck({
+      checkboxClass: 'icheckbox_square-blue',
+      radioClass: 'iradio_square-blue',
+      increaseArea: '20%' // optional
+    });
+  });
+</script>
+</body>
