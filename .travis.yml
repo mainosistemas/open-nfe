@@ -7,4 +7,7 @@ script:
   - bundle exec rake db:create
   - bundle exec rake db:migrate
   - bundle exec rake db:test:prepare
-  - CODE_CLIMATE_REPO_TOKEN ENV['CODECLIMATE_REPO_TOKEN'] bundle exec rspec
+  - bundle exec rspec
+addons:
+  code_climate:
+    repo_token: ENV['CODECLIMATE_REPO_TOKEN']
