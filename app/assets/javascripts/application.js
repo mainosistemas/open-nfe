@@ -19,3 +19,4 @@
 //= require fastclick.min
 //= require admin_ltde/app.min
 //= require select2.full.min
+//= require activate
