@@ -39,9 +39,9 @@ RSpec.describe ClientesController, type: :controller do
         expect(user.clientes.count).to eq(1)
       end
 
-      it 'redireciona para o edit path' do
+      it 'redireciona para a index' do
         post :create, params: { cliente: cliente_params }
-        expect(response).to redirect_to(edit_cliente_path(Cliente.first))
+        expect(response).to redirect_to(clientes_path)
       end
     end
 
@@ -100,12 +100,12 @@ RSpec.describe ClientesController, type: :controller do
         end.to change { cliente.reload.razao_social }.from('foo').to('fooo inc')
       end
 
-      it 'redireciona para o edit path' do
+      it 'redireciona para a index' do
         put :update, params: {
           id: cliente.id,
           cliente: { razao_social: 'fooo inc' }
         }
-        expect(response).to redirect_to(edit_cliente_path(cliente))
+        expect(response).to redirect_to(clientes_path)
       end
     end
 
