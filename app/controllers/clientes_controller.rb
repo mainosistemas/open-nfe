@@ -14,7 +14,7 @@ class ClientesController < ApplicationController
     @cliente = current_user.clientes.new(cliente_params)
     if @cliente.save
       flash[:notice] = 'Cliente cadastrado com sucesso'
-      redirect_to edit_cliente_path(@cliente)
+      redirect_to clientes_path
     else
       render :new
     end
@@ -26,7 +26,7 @@ class ClientesController < ApplicationController
   def update
     if @cliente.update(cliente_params)
       flash[:notice] = 'Cliente atualizado com sucesso'
-      redirect_to edit_cliente_path(@cliente)
+      redirect_to clientes_path
     else
       render :edit
     end
