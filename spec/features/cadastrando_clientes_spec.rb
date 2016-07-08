@@ -16,7 +16,7 @@ RSpec.feature 'Cadastrando Clientes', type: :feature do
     click_on 'Cadastrar'
     select(tipo_de_pessoa.nome_por_extenso, from: 'cliente_tipo_de_pessoa_id')
     select(pais.nome, from: 'cliente_pais_id')
-    select(uf.nome_por_extenso, from: 'cliente_uf_id')
+    select(uf.nome, from: 'cliente_uf_id')
     select(municipio.nome, from: 'cliente_municipio_id')
     fill_form(:cliente, attributes_for(:cliente))
     click_on 'Salvar'
